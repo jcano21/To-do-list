@@ -1,6 +1,5 @@
 import { updateTask, deleteTask } from '../services/endpoints';
 import { RiDeleteBin5Fill } from "react-icons/ri";
-import { FaEdit } from "react-icons/fa";
 
 const Task = ({ task, onTaskUpdated }) => {
   const handleToggle = async () => {
@@ -16,8 +15,6 @@ const Task = ({ task, onTaskUpdated }) => {
   return (
     <li
       className="list-group-item d-flex align-items-center justify-content-between custom-task-item mb-2 rounded"
-      onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = '#3c3c3c')}
-      onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = '#2e2e2e')}
     >
       <div className="d-flex align-items-center">
         <input
@@ -38,10 +35,6 @@ const Task = ({ task, onTaskUpdated }) => {
         </div>
       </div>
       <div className="d-flex align-items-center gap-2">
-        <button className="btn btn-outline-secondary btn-sm">
-        <FaEdit className="delete-icon" />
-          <i className="bi bi-star"></i>
-        </button>
         <button
           onClick={handleDelete}
           className="btn btn-outline-danger custom-delete-btn"
