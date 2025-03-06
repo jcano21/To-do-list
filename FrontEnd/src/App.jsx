@@ -1,6 +1,8 @@
-import { useState } from 'react';
+import { useState,useEffect } from 'react';
 import Login from './components/Login';
 import CreateTask from './components/CreateTask';
+import { getTasks } from './services/endpoints';
+import List from './components/List';
 
 function App() {
   const [userEmail, setUserEmail] = useState(null);
@@ -20,19 +22,28 @@ function App() {
     }
   };
 
-
+  useEffect(() => {
+    if (userEmail) fetchTasks();
+  }, [userEmail]);
 
   if (!userEmail) {
     return <Login onLogin={handleLogin} />;
   }
 
   return (
-    <div className="container mt-4">
-      <h1 className="text-center mb-4">
-        Lista de Tareas - {userEmail}
-      </h1>
+    <div className="page-wrapper">
+    <div className="container mt-3">
+      {/* Título */}
+      <h1 className="mb-2">To do: </h1>
+
+      {/* Lista de tareas */}
+      <List tasks={tasks} onTaskUpdated={fetchTasks} />
+
+      {/* Botón para agregar tarea */}
       <CreateTask userEmail={userEmail} onTaskCreated={fetchTasks} />
-      {error && <p style={{ color: 'red' }}>{error}</p>}
+
+      {error && <p className="text-danger mt-3 text-center">{error}</p>}
+    </div>
     </div>
   );
 }
