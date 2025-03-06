@@ -32,7 +32,7 @@ const Login = ({ onLogin }) => {
                     type="email"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
-                    placeholder="Correo electrónico"
+                    placeholder="Ingresa tu e-mail"
                     className="form-control"
                     required
                   />

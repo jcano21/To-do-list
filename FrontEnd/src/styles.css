@@ -1,0 +1,155 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .page-wrapper {
+    display: flex;
+    justify-content: center; /* Centrar horizontalmente */
+    align-items: center; /* Centrar verticalmente */
+    min-height: 100vh; /* Asegura que el contenedor ocupe al menos el alto de la ventana */
+    background-color: #64a7b3; /* Color de fondo opcional */
+  }
+  
+  .container {
+    max-width: 600px; /* Contenedor más estrecho para un diseño enfocado */
+    padding: 30px;
+    background-color: rgba(255, 255, 255, 0.8); /* Fondo blanco con transparencia */
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+  }
+  
+  /* Estilos para el título principal */
+  h1 {
+    font-weight: 400;
+    color: #333; /* Texto oscuro para mejor contraste */
+    margin-bottom: 20px;
+    font-family: "Pacifico", cursive;
+    font-size: 50px;
+    padding: 20px;
+  }
+
+  /* Estilos para los elementos de tarea */
+  .custom-task-item {
+    background-color: #f8f9fa; /* Fondo gris claro */
+    color: #333; /* Texto oscuro */
+    border: none; /* Sin borde */
+    border-radius: 8px; /* Bordes redondeados */
+    padding: 10px 15px; /* Espaciado interno */
+    margin-bottom: 10px; /* Espacio entre tareas */
+    transition: background-color 0.3s ease;
+  }
+  
+  .custom-task-item:hover {
+    background-color: #e9ecef; /* Fondo ligeramente más oscuro al pasar el mouse */
+  }
+  
+  /* Estilo del texto dentro de la tarea */
+  .custom-task-item span {
+    font-size: 1rem;
+    font-weight: 500; /* Peso medio para mejor legibilidad */
+  }
+  
+  /* Estilos para tareas completadas */
+  .text-muted.text-decoration-line-through {
+    color: #6c757d !important; /* Asegura el color gris para las tareas completadas */
+  }
+
+  /* Botón para agregar tareas */
+  .btn-success {
+    background-color: #17a2b8; /* Color cian */
+    border: none;
+    border-radius: 20px; /* Bordes redondeados */
+    padding: 8px 20px;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+  }
+  
+  .btn-success:hover {
+    background-color: #138496; /* Cian más oscuro al pasar el mouse */
+  }
+
+  /* Botón personalizado para eliminar */
+  .custom-delete-btn {
+    background-color: transparent;
+    border: 1px solid #dc3545;
+    color: #dc3545;
+    border-radius: 50%; /* Botón circular */
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  .custom-delete-btn:hover {
+    background-color: #dc3545;
+    color: #fff; /* Texto blanco al pasar el mouse */
+  }
+  
+  .delete-icon {
+    font-size: 1.2rem;
+    color: #f1eeee;
+  }
+  
+  /* Estilo para el botón de editar */
+  .btn-outline-secondary {
+    border: 1px solid #17a2b8; /* Borde cian */
+    color: #17a2b8; /* Icono cian */
+    border-radius: 50%; /* Botón circular */
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  .btn-outline-secondary:hover {
+    background-color: #17a2b8; /* Fondo cian al pasar el mouse */
+    color: #fff; /* Icono blanco */
+  }  
+
+  /* Espaciado inferior para la barra de entrada */
+  .input-group {
+    margin-bottom: 20px;
+  }
+  
+  /* Estilos para los campos de entrada */
+  .form-control {
+    border: 1px solid #ced4da; /* Borde gris claro */
+    border-radius: 8px; /* Bordes redondeados */
+    padding: 10px 15px;
+    font-size: 1rem;
+    color: #333;
+  }
+  
+  .form-control::placeholder {
+    color: #6c757d; /* Texto de marcador gris */
+    font-style: italic;
+  }
+  
+  .form-control:focus {
+    border-color: #17a2b8; /* Borde cian al enfocar */
+    box-shadow: 0 0 5px rgba(23, 162, 184, 0.3); /* Brillo sutil */
+  }  
+
+  /* Estilos para los botones de selección (checkbox/radio) */
+  .form-check-input {
+    width: 20px; /* Tamaño más grande */
+    height: 20px;
+    margin-right: 10px; /* Espaciado entre el botón y el texto */
+  }
+  
+  .form-check-input:checked {
+    background-color: #28a745; /* Verde cuando está seleccionado */
+    border-color: #28a745;
+  }
+  
+  .form-check-input:focus {
+    box-shadow: 0 0 5px rgba(40, 167, 69, 0.3); /* Brillo sutil al enfocar */
+  }
