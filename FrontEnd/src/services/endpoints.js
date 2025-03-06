@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_BASE_URL = 'https://gsi-interviews.camiapp.net/to-do';
+const API_BASE_URL = '/to-do';
 
 const api = axios.create({
   baseURL: API_BASE_URL,
