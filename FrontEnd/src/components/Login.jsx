@@ -9,41 +9,47 @@ const Login = ({ onLogin }) => {
     e.preventDefault();
     try {
       const token = await login(email);
-      //Llama al token guardado en el localstorage
       localStorage.setItem('token', token);
       onLogin(email);
     } catch (err) {
-
-        //Error si el email es invalido
       setError('Error al iniciar sesión');
     }
   };
 
   return (
-    <div className="container mt-5">
-      <div className="row justify-content-center">
-        <div className="col-md-6">
-          <div className="card shadow-sm">
-            <div className="card-body">
-              <h2 className="card-title text-center mb-4">Iniciar Sesión</h2>
-              <form onSubmit={handleSubmit}>
-                <div className="mb-3">
-                  <input
-                    type="email"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    placeholder="Correo electrónico"
-                    className="form-control"
-                    required
-                  />
-                </div>
-                <button type="submit" className="btn btn-primary w-100">
-                  Iniciar Sesión
-                </button>
-              </form>
-              {error && <p className="text-danger mt-3 text-center">{error}</p>}
+    <div className="login-wrapper">
+      <div className="login-container">
+        {/* Seccion Izquierda*/}
+        <div className="login-form">
+          <h2 className="login-title">¡Bienvenido a To-do-List!</h2>
+          <p className="login-subtitle">Ingresa tu e-mail para ver tu lista de tareas!</p>
+          <form onSubmit={handleSubmit}>
+            <div className="mb-3">
+              <input
+                type="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                placeholder="Ingresa tu e-mail"
+                className="form-control"
+                required
+              />
             </div>
-          </div>
+            <button type="submit" className="btn btn-primary w-100">
+              Iniciar Sesión
+            </button>
+          </form>
+          {error && <p className="text-danger mt-3 text-center">{error}</p>}
+        
+          
+        </div>
+
+        {/* Sección derecha - Imagen */}
+        <div className="login-image">
+          <img
+            src="https://cdn-icons-png.flaticon.com/512/4697/4697260.png"
+            alt="Login Visual"
+            className="img-fluid"
+          />
         </div>
       </div>
     </div>
