@@ -20,19 +20,32 @@ const Login = ({ onLogin }) => {
   };
 
   return (
-    <div>
-      <h2>Login</h2>
-      <form onSubmit={handleSubmit}>
-        <input
-          type="email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          placeholder="Email"
-          required
-        />
-        <button type="submit">Login</button>
-      </form>
-      {error && <p style={{ color: 'red' }}>{error}</p>}
+    <div className="container mt-5">
+      <div className="row justify-content-center">
+        <div className="col-md-6">
+          <div className="card shadow-sm">
+            <div className="card-body">
+              <h2 className="card-title text-center mb-4">Iniciar Sesión</h2>
+              <form onSubmit={handleSubmit}>
+                <div className="mb-3">
+                  <input
+                    type="email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    placeholder="Correo electrónico"
+                    className="form-control"
+                    required
+                  />
+                </div>
+                <button type="submit" className="btn btn-primary w-100">
+                  Iniciar Sesión
+                </button>
+              </form>
+              {error && <p className="text-danger mt-3 text-center">{error}</p>}
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };
